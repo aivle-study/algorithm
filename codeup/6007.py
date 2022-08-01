@@ -1,1 +1,1 @@
-print('print("Hello\\nWorld")')
+print('"C:\\Download\\\'hello\'.py"')
