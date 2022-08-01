@@ -1,0 +1,81 @@
+# 6001
+print('Hello')
+
+# 6002
+print('Hello World')
+
+# 6003
+print('Hello')
+print('World')
+
+# 6004
+print("'Hello'")
+
+# 6005
+print('"Hello World"')
+
+# 6006
+print('"!@#$%^&*()\'')
+
+# 6007
+print('"C:\Download\\\'hello\'.py"')
+
+# 6008
+print('print("Hello\\nWorld")')
+
+# 6009
+c = input()
+print(c)
+
+# 6010
+c = int(input())
+print(c)
+
+# 6011
+c = float(input())
+print(c)
+
+# 6012
+a = int(input())
+b = int(input())
+print(a)
+print(b)
+
+# 6013
+a = input()
+b = input()
+print(b)
+print(a)
+
+# 6014
+a = float(input())
+print(a)
+print(a)
+print(a)
+
+# 6015
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a)
+print(b)
+
+# 6016
+a, b = input().split()
+print(b,a)
+
+# 6017
+s = input()
+print(s,s,s)
+
+# 6018
+a,b = input().split(':')
+print(a,b,sep=':')
+
+# 6019
+y,m,d = input().split('.')
+print(d,m,y,sep='-')
+
+# 6020
+a,b = input().split('-')
+print(a+b)
