@@ -1,4 +1,4 @@
 a,b=input().split(" ")
 a=bool(int(a))
 b=bool(int(b))
-print(a or b)
+print((not(a) and not(b))or (b and a))

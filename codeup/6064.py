@@ -1,0 +1,7 @@
+a, b ,c= input().split()
+a = int(a)  
+b = int(b)
+c=int(c)
+min_t = (a if (a<=b) else b)
+min=(c if (min_t>=c)else min_t)
+print(min)
