@@ -1,0 +1,127 @@
+# 6041
+a, b = input().split()
+d = int(a) % int(b)
+print(d)
+
+# 6042 : 소숫점 이하 두 번째 자리까지의 정확도로 반올림한 값을 출력
+a = float(input())
+print(format(a, ".2f"))
+
+# 6043 : 소숫점 넷째자리에서 반올림하여 무조건 소숫점 셋째 자리까지 출력
+f1, f2 = input().split()
+print(format(float(f1)/float(f2), ".3f"))
+
+# 6044
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a + b)
+print(a - b)
+print(a * b)
+print(a // b)
+print(a % b)
+print(format(a / b, ".2f"))
+
+# 6045
+a, b, c = input().split()
+a = int(a)
+b = int(b)
+c = int(c)
+s = a + b + c
+print(s, format(s/3, ".2f"))
+
+# 6046
+# 왼쪽 비트시프트(<<) : 오른쪽에 0이 주어진 개수만큼 추가
+# 오른쪽 비트시프트(>>) : 왼쪽에 0(0 또는 양의 정수인 경우)이나 1(음의 정수인 경우)이 개수만큼 추가
+# 가장 오른쪽에 있는 1비트는 사라짐
+
+#예시
+"""n = 10
+print(n<<1)  #10을 2배 한 값인 20 이 출력된다.
+print(n>>1)  #10을 반으로 나눈 값인 5 가 출력된다.
+print(n<<2)  #10을 4배 한 값인 40 이 출력된다.
+print(n>>2)  #10을 반으로 나눈 후 다시 반으로 나눈 값인 2 가 출력된다."""
+n = int(input())
+print(n<<1)
+
+# 6047
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a<<b) # a * 2^b
+
+# 6048
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a<b)
+
+# 6049
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a==b)
+
+# 6050
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(b>=a)
+
+# 6051
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a!=b)
+
+# 6052
+n = int(input())
+print(bool(n)) # True/False 로 평가
+
+# 6053
+a = bool(int(input()))
+print(not a)
+
+# 6054
+a, b = input().split()
+print(bool(int(a)) and bool(int(b)))
+
+# 6055
+a, b = input().split()
+print(bool(int(a)) or bool(int(b)))
+
+# 6056
+a, b = input().split()
+c = bool(int(a))
+d = bool(int(b))
+print((c and (not d)) or ((not c) and d))
+
+# 6057
+a, b = input().split()
+c = bool(int(a))
+d = bool(int(b))
+print(c == d)
+
+# 6058
+a, b = input().split()
+c = bool(int(a))
+d = bool(int(b))
+print((not c) and (not d)) # 불 값(True/False) 이 모두 False 일 때에만 True 를 출력
+
+# 6059 : 입력 된 정수를 비트단위로 참/거짓을 바꾼 후 정수로 출력
+# ~n = -n - 1
+a = int(input())
+print(~a) # a = 1, print(~a) = -2
+
+# 6060 : 입력된 정수 두 개를 비트단위로 and 연산한 후 그 결과를 정수로 출력
+# 비트단위(bitwise)연산자
+# ~(bitwise not)
+# &(bitwise and)
+# |(bitwise or)
+# ^(bitwise xor)
+# <<(bitwise left shift)
+# >>(bitwise right shift)
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a&b)
