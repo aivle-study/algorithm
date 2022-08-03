@@ -1,0 +1,95 @@
+# 6021
+s = input()
+for i in range(0,len(s)):
+    print(s[i])
+    
+# 6022
+s = input()
+print(s[0:2],sep=' ')
+print(s[2:4],sep=' ')
+print(s[4:6])
+
+# 6023
+h,m,s = input().split(':')
+print(m)
+
+# 6024
+w1, w2 = input().split()
+s = w1+w2
+print(s)
+
+# 6025
+a,b = input().split()
+c = int(a) + int(b)
+print(c)
+
+# 6026
+a = float(input())
+b = float(input())
+print(a+b)
+
+# 6027
+# 10진수 형태로 입력받고 %x로 출력하면 16진수(hexadecimal) 소문자로 출력된다.
+# %o로 출력하면 8진수(octal) 문자열로 출력된다.
+n = int(input())
+print('%x'%n) # n에 저장되어있는 값을 16진수(hexadecimal) 소문자 형태 문자열로 출력
+
+# 6028
+n = int(input())
+print('%X'%n) #n에 저장되어있는 값을 16진수 대문자 형태 문자열로 출력
+
+# 6029
+n = int(input(), 16)
+print('%o'%n)
+
+# 6030
+n = ord(input()) #입력받은 문자를 10진수 유니코드 값으로 변환한 후, n에 저장한다.
+print(n)
+
+# 6031
+# chr( ) : 정수값 -> 문자
+# ord( ) : 문자 -> 정수값 
+c = int(input())
+print(chr(c)) # c에 저장되어 있는 정수 값을 유니코드 문자(chracter)로 바꿔 출력
+
+# 6032
+n = int(input())
+print(-n)
+
+# 6033
+n = ord(input())
+print(chr(n+1))
+
+# 6034
+a, b = input().split()
+c = int(a) - int(b)
+print(c)
+
+# 6035
+f1, f2 = input().split(' ')
+m = float(f1) * float(f2)
+print(m)
+
+# 6036
+w, n = input().split()
+print(w*int(n))
+
+# 6037
+n = int(input())
+c = input()
+print(n*c)
+
+# 6038
+a, b = input().split()
+c = int(a)**int(b)
+print(c)
+
+# 6039
+f1, f2 = input().split()
+m = float(f1) ** float(f2)
+print(m)
+
+# 6040
+a, b = input().split()
+d = int(a) // int(b)
+print(d)
