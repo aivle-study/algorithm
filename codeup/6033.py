@@ -1,0 +1,1 @@
+print(chr(n+1))
