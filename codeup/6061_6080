@@ -1,0 +1,180 @@
+# 6061
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a|b)
+
+# 6062
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a^b)
+
+# 6063
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a if (a>=b) else b)
+
+# 6064
+a, b, c = input().split()
+a = int(a)
+b = int(b)
+c = int(c)
+
+if a < b:
+    if b < c:
+        print(a)
+    if c < a:
+        print(c)
+else:
+    if b < c:
+        print(b)
+    else:
+        print(c)
+# print((a if a>b else b) if ((a if a>b else b)>c) else c)
+
+# 6065
+a, b, c = input().split()
+a = int(a)
+b = int(b)
+c = int(c)
+if a % 2 == 0:
+    print(a)
+if b % 2 == 0:
+    print(b)
+if c % 2 == 0:
+    print(c)
+
+# 6066
+a, b, c = input().split()
+a = int(a)
+b = int(b)
+c = int(c)
+print('even' if (a%2 ==0) else 'odd')
+print('even' if (b%2 ==0) else 'odd')
+print('even' if (c%2 ==0) else 'odd')
+
+# 6067
+n = int(input())
+
+if n < 0:
+    if n%2 == 0:
+        print('A')
+    else:
+        print('B')
+else:
+    if n%2 == 0:
+        print('C')
+    else:
+        print('D')
+
+# 6068
+n = int(input())
+if n >= 90:
+    print('A')
+elif n >= 70:
+    print('B')
+elif n >= 40:
+    print('C')
+else:
+    print('D')
+
+# 6069
+s = input()
+if s == 'A':
+    print("best!!!")
+elif s == 'B':
+    print('good!!')
+elif s == 'C':
+    print('run!')
+elif s == 'D':
+    print('slowly~')
+else:
+    print('what?')
+
+# 6070
+n = int(input())
+if n//3 == 1:
+    print('spring')
+elif n//3 == 2:
+    print('summer')
+elif n//3 == 3:
+    print('fall')
+else:
+    print('winter')
+
+# 6071
+n = 1
+while n != 0:
+    n = int(input())
+    if n != 0:
+        print(n)
+    else:
+        break
+
+# 6072
+n = int(input())
+while n != 0:
+    print(n)
+    n -= 1
+
+# 6073
+n = int(input()) -1
+while n >= 0:
+    print(n)
+    n -= 1
+    
+# 6074
+c = ord(input())
+t = ord('a')
+while t <= c:
+    print(chr(t), end=' ')
+    t += 1
+
+# 6075
+n = int(input())
+s = 0
+while s <= n:
+    print(s) 
+    s += 1
+
+# 6076
+n = int(input())
+for i in range(n+1):
+    print(i)
+
+# 6077
+n = int(input())
+s = 0
+for i in range(1, n+1):
+    if i % 2 == 0:
+        s += i
+print(s)
+
+# 6078
+s = 'a'
+while s != 'q':
+    s = input()
+    if s != 'q':
+        print(s)
+    else:
+        print(s)
+        break
+
+# 6079 :1, 2, 3 ... 을 계속 더해 나갈 때, 그 합이 입력한 정수(0 ~ 1000)보다 같거나 작을 때까지만 계속 더하기
+n = int(input())
+i = 0
+s = 1
+while s <= n:
+    i += 1
+    s += i
+print(i)
+
+# 6080
+n, m = input().split()
+n = int(n)
+m = int(m)
+for i in range(1, n+1):
+    for j in range(1, m+1):
+        print(i, j)
