@@ -1,17 +1,15 @@
-a = input().split()
-A = "best!!!"
-B = "good!!"
-C = "run!"
-D = "slowly~"
+a = input()
 
-if a == A:
-    print(A)
+if a == 'A':
+    print("best!!!")
     
-elif a == B:
-    print(B)
+elif a == 'B':
+    print("good!!")
     
-elif a == C:
-    print(C)
+elif a == 'C':
+    print("run!")
     
+elif a == 'D':
+    print("slowly~")
 else:
-    print(D)
+    print("what?")
