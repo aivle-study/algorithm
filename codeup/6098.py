@@ -5,24 +5,31 @@
 d=[list(map(int,input().split())) for i in range(10)]
 
 x,y=1,1
+d[x][y]=9
 
 while True:
-    if d[x][y]==0:
+    
+    if d[x+1][y]==0:
+        x+=1
         d[x][y]=9
-    elif d[x][y]==2:
+        continue
+    
+    if d[x][y+1]==0:
+        y+=1
         d[x][y]=9
-        #먹이를 찾은 경우
+        continue
+    
+    if d[x][y+1]==2:
+        y+=1
+        d[x][y]=9
         break
     
-    #갈곳이 없는 경우
-    if (d[x][y+1]==1)and(d[x+1][y]==1):
-        break
-    
-    if d[x][y+1]!=1:
-        y=y+1
-    if d[x+1][y]!=1:
-        x=x+1
-        
+    if d[x+1][y]==2:
+        x+=1
+        d[x][y]=9
+        break 
+      
+    break        
     
 for i in range(10):
     for j in range(10):
