@@ -1,7 +1,5 @@
-n=int(input())
-
-if n%2==0:
-    x=n-1
+a=float(input())
+if a%10==0:
+    print("bottom")
 else:
-    x=n+1
-print(x)
+    print("top")
