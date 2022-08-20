@@ -1,4 +1,5 @@
 n=list(map(int,input().split(" ")))
+a=0
 avg=sum(n)/len(n)
 for i in n:
     if i<40:
