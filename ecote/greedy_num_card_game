@@ -1,0 +1,9 @@
+# 숫자카드 게임
+n, m = map(int, input().split())
+
+result = 0
+for i in range(n):
+    data = list(map(int, input().split()))
+    minimum = min(data)
+    result = max(minimum, result)
+print(result)
