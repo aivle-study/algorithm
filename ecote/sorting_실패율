@@ -1,0 +1,25 @@
+# https://programmers.co.kr/learn/courses/30/lessons/42889
+# 기본 코드가 제공되므로 상기 링크를 통해서 문제 풀이하기
+## 입력 조건
+# 1. 스테이지의 개수 N은 1 이상 500 이하의 자연수이다.
+# 2. stages의 길이는 1 이상 200,000 이하이다.
+# 3. stages에는 1 이상 N + 1 이하의 자연수가 담겨있다.
+# 4. 각 자연수는 사용자가 현재 도전 중인 스테이지의 번호를 나타낸다.
+#    (단, N + 1 은 마지막 스테이지(N 번째 스테이지) 까지 클리어 한 사용자를 나타낸다.)
+# 5. 만약 실패율이 같은 스테이지가 있다면 작은 번호의 스테이지가 먼저 오도록 하면 된다.
+# 6. 스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 0 으로 정의한다.
+
+
+def solution(N, stages):
+    challenge = []
+    clear = []
+    failure = {}
+    for i in range(1,N+1):
+        challeng.append(len([x for x in stages if x >= i]))
+        clear.append(len([x for x in stages if x > i]))
+    for i in range(N):
+        if challenge[i] == 0:
+            failure[i+1] = 0
+        else:
+            failure[i+1] = (challenge[i]-clear[i])/challenge[i]
+    return sorted(failure, key=lambda x : failure[x], reverse = True)
