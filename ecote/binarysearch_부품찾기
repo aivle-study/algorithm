@@ -1,0 +1,20 @@
+## 입력 조건
+# 1. 첫째 줄에 정수 N 이 주어진다. (1 ≤ N ≤ 1,000,000)
+# 2. 두째 줄에 공백으로 구분하여 N 개의 정수가 주어진다. 이때 정수는 1 보다 크고 1,000,000 이하이다.
+# 3. 셋째 줄에 정수 M 이 주어진다. (1 ≤ M ≤ 100,000)
+# 4. 넷째 줄에 공백으로 구분하여 M 개의 정수가 주어진다. 이때 정수는 1 보다 크고 1,000,000 이하이다.
+## 출력 조건
+# 1. 첫째 줄에 공백으로 구분하여 각 부품이 존재하면 yes 를, 없으면 no 를 출력한다.
+
+n = int(input())
+product = set(map(int,input().split()))
+
+m = int(input())
+ask = list(map(int,input().split()))
+
+for i in ask:
+    if i in product:
+        print('yes', end=' ')
+    else:
+        print('no', end=' ')
+    
