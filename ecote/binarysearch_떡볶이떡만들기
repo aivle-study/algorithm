@@ -1,0 +1,29 @@
+## 입력 조건
+# 1. 첫째 줄에 떡의 개수 N 과 요청한 떡의 길이 M 이 주어진다. (1 ≤ N ≤ 1,000,000, 1 ≤ M ≤ 2,000,000,000)
+# 2. 둘째 줄에 떡의 개별 높이가 주어진다. 떡 높이의 총합은 항상 M 이상이므로, 손님은 필요한 양만큼 떡을 사갈 수 있다. 
+#    높이는 10 억보다 작거나 같은 양의 정수 또는 0 이다.
+## 출력 조건
+# 1. 적어도 M 만큼의 떡을 집에 가져가기 위해 절단기에 설정할 수 있는 높이의 최댓값을 출력한다.
+
+n, m = map(int, input().split())
+rice = list(map(int,input().split()))
+
+start = 0
+end = max(rice)
+
+result = 0
+while (start <= end):
+    total = 0
+    medi = (start+end) // 2
+    for i in rice:
+        # medi 보다 큰 떡 자른 길이 합하기
+        if i > medi:
+            total += (i-medi)
+    # 떡의 양이 모자란 경우, medi -1 이동
+    if total < m:
+        end = medi-1
+    # 떡의 양이 넘친 경우, medi +1 이동
+    else:
+        result = medi
+        start = medi+1
+print(result)
