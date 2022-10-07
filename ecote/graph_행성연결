@@ -1,0 +1,68 @@
+## 문제
+# N 개의 행성으로 이루어진 왕국에서 효율적인 지배를 위해 행성을 연결하는 터널을 만들려고 합니다.
+# 행성은 3차원 좌표 위의 한 점으로 생각하면 됩니다.
+# 두 행성 A(x1, y1, z1) 와 B(x2, y2, z2) 의 터널 건설 비용은 min(|x1-x2|, |y1-y2|, |z1-z2|) 입니다.
+# 총 N-1 개의 터널을 건설하여 모든 행성을 연결할 것입니다.
+# 이때, 모든 행성을 터널로 연결하는데 필요한 최소 비용을 구하는 프로그램을 작성하세요.
+
+## 입력 조건
+# 1. 첫째 줄에 행성의 개수 N 이 주어집니다. (1 ≤ N ≤ 100,000)
+# 2. 다음 N 개 줄에는 각 행성의 x, y, z  좌표가 주어집니다.
+# 3. 모든 좌표 값은 -10^9 보다 크거나 같고, 10^9 보다 작거나 같은 정수입니다.
+# 4. 한 위치에 행성이 두 개 이상 있는 경우는 없습니다.
+
+## 출력 조건
+# 1. 첫째 줄에 모든 행성을 터널로 연결하는데 필요한 최소 비용을 출력합니다.
+
+# 특정 원소가 속한 집합 찾기
+def find_parent(parent, x):
+    if parent[x] != x:
+        parent[x] = find_parent(parent, parent[x])
+    return parent[x]
+
+# 두 원소가 속한 집합 찾기
+def union_parent(parent, a, b):
+    a = find_parent(parent, a)
+    b = find_parent(parent, b)
+    
+    if a < b:
+        parent[b] = a
+    else:
+        parent[a] = b
+        
+# 노드의 개수와 터널(union 연산)의 개수 입력받기
+m = int(input())
+parent = [0]*(n+1)
+
+# 모든 터널을 담을 리스트와 최종 비용을 담을 변수
+point = []
+edge = []
+cost = 0
+
+# 부모 테이블상에서, 부모를 자기 자신으로 초기화
+for i in range(1, n+1):
+    parent[i] = i # [0,1,2,3,4,…]
+
+# 각 행성의 좌표 받기
+for _ in range(m):
+    x, y, z = map(int, input().split())
+    point.append((x,y,z))
+
+# 행성별 터널 연결 비용 계산
+for i in range(m):
+    for j in range(1,m):
+        c = min(abs(point[i][0]-point[j][0]), abs(point[i][1]-point[j][1]), abs(point[i][2]-point[j][2]))
+        edge.append((c,i,j))
+
+# 터널 연결 비용 정렬
+edge.sort()
+
+# 터널 하나씩 확인하며
+for e in edge:
+    c, a, b = e
+    # 사이클이 발생하지 않는 경우에만 집합에 포함
+    if find_parent(parent, a) != find_parent(parent, b):
+        union_parent(parent,a,b)
+        cost += c
+
+print(cost)
