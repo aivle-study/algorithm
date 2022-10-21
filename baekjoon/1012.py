@@ -15,7 +15,8 @@ def dfs(x,y):
     return False
 
 t=int(input())  
-result_list=[]      
+result_list=[]
+      
 for _ in range(t):
     m,n,k=list(map(int,input().split()))
     
@@ -27,12 +28,10 @@ for _ in range(t):
         
     result=0
     
-    for i in range(m):
-        for j in range(n):
+    for i in range(n):
+        for j in range(m):
             if dfs(i,j)==True:
                 result+=1
-    result_list.append(result)
-    
-for i in range(len(result_list)):
-    print(result_list[i]) 
+    print(result)
+    result=0
     
