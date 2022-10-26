@@ -4,9 +4,7 @@ from operator import itemgetter
 
 n=int(input())
 student=[input().split() for i in range(n)]
-dic={}
-for i in range(n):
-    dic[student[i][0]]=student[i][1]
-dic=dict(sorted(dic.items(),key=lambda x:x[1]))
-for key in dic.keys():
-    print(key,end=' ')
+
+student.sort(key=lambda x:x[1])
+for i in range(len(student)):
+    print(student[i][0],end=' ')
